@@ -15,9 +15,31 @@ paths:
       produces:
         - application/json
       security:
-        - keycloak: []
+        - api_key: []
       x-google-backend:
         address: "https://service-template-python-487763415581.us-central1.run.app"
+        path_translation: "APPEND_PATH_TO_ADDRESS"
+      x-google-cors:
+        allowOrigins: ["*"]
+        allowMethods: ["POST"]
+        allowHeaders: ["Content-Type", "Authorization"]
+      responses:
+        "200":
+          description: "Respuesta exitosa"
+        "400":
+          description: "Solicitud inválida"
+  /v1/token:
+    post:
+      summary: "endpoints autentication a Cloud Run"
+      operationId: "post"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - api_key: []
+      x-google-backend:
+        address: "https://pharmagob-manager-auth-487763415581.us-central1.run.app"
         path_translation: "APPEND_PATH_TO_ADDRESS"
       x-google-cors:
         allowOrigins: ["*"]
@@ -34,11 +56,4 @@ securityDefinitions:
     in: query
     name: key
     type: apiKey
-  keycloak:
-    authorizationUrl: ""
-    flow: "implicit"
-    type: "oauth2"
-    x-google-issuer: "http://34.127.79.17/realms/<realm>"  # <- emisor del token
-    x-google-jwks_uri: "http://34.127.79.17/realms/<realm>/protocol/openid-connect/certs"
-    x-google-audiences: "traxion-farma_gob-farmacias-back"  # <- ID del cliente que emite Keycloak
 
