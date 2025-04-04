@@ -9,7 +9,7 @@ paths:
   /v1/tests:
     post:
       summary: "Ejemplo de llamada POST a Cloud Run"
-      operationId: "post"
+      operationId: "post-tests"
       consumes:
         - application/json
       produces:
@@ -31,7 +31,7 @@ paths:
   /v1/token:
     post:
       summary: "endpoints autentication a Cloud Run"
-      operationId: "post"
+      operationId: "post-tokens"
       consumes:
         - application/json
       produces:
