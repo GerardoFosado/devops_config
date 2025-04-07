@@ -15,7 +15,7 @@ paths:
       produces:
         - application/json
       security:
-        - api_key: []
+        - keycloak: []
       x-google-backend:
         address: "https://service-template-python-487763415581.us-central1.run.app"
         path_translation: "APPEND_PATH_TO_ADDRESS"
@@ -78,7 +78,7 @@ securityDefinitions:
     in: query
     name: key
     type: apiKey
-  auth0:
+  keycloak:
     authorizationUrl: ""
     flow: "implicit"
     type: "oauth2"
