@@ -84,6 +84,4 @@ securityDefinitions:
     type: "oauth2"
     x-google-issuer: "https://login-dev.traxion.global/realms/traxion-logistica-farma_gob"
     x-google-jwks_uri: "https://login-dev.traxion.global/realms/traxion-logistica-farma_gob/protocol/openid-connect/certs"
-    x-google-audiences: "traxion-farma_gob-farmacias-back"
-  
-
+    x-google-audiences: "imss-pods-web,account"
