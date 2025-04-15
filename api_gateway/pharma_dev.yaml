@@ -94,8 +94,14 @@ paths:
           description: "Respuesta exitosa"
         "400":
           description: "Solicitud inválida"
-  "/v1/shipments/{shipment_id}":
+  /v1/shipments/{shipment_id}:
     get:
+      parameters:
+        - in: path
+          name: shipment_id
+          type: string
+          required: True
+          description: Unique identifier representing a specific shipment_id
       summary: "endpoints shipments a Cloud Run"
       operationId: "SERVICE_GET_ENTITY_V1_SHIPMENTS"
       consumes:
@@ -116,8 +122,14 @@ paths:
           description: "Respuesta exitosa"
         "400":
           description: "Solicitud inválida"
-  "/v1/shipments/{shipment_id}/shipment-details":
+  /v1/shipments/{shipment_id}/shipment-details:
     get:
+      parameters:
+        - in: path
+          name: shipment_id
+          type: string
+          required: True
+          description: Unique identifier representing a specific shipment_id
       summary: "endpoints shipments a Cloud Run"
       operationId: "SERVICE_GET_ENTITY_V1_SHIPMENTS_SHIPMENT_DETAILS"
       consumes:
