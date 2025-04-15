@@ -72,7 +72,94 @@ paths:
           description: "Token refrescado exitosamente"
         "400":
           description: "Solicitud inválida"
-
+  /v1/shipments:
+    get:
+      summary: "endpoints shipments a Cloud Run"
+      operationId: "SERVICE_GET_ALL_V1_SHIPMENTS"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - api_key: []
+      x-google-backend:
+        address: "https://shipments-487763415581.us-central1.run.app"
+        path_translation: "APPEND_PATH_TO_ADDRESS"
+      x-google-cors:
+        allowOrigins: ["*"]
+        allowMethods: ["GET"]
+        allowHeaders: ["Content-Type", "Authorization"]
+      responses:
+        "200":
+          description: "Respuesta exitosa"
+        "400":
+          description: "Solicitud inválida"
+  /v1/shipments/{shipment_id}:
+    get:
+      summary: "endpoints shipments a Cloud Run"
+      operationId: "SERVICE_GET_ENTITY_V1_SHIPMENTS"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - api_key: []
+      x-google-backend:
+        address: "https://shipments-487763415581.us-central1.run.app"
+        path_translation: "APPEND_PATH_TO_ADDRESS"
+      x-google-cors:
+        allowOrigins: ["*"]
+        allowMethods: ["GET"]
+        allowHeaders: ["Content-Type", "Authorization"]
+      responses:
+        "200":
+          description: "Respuesta exitosa"
+        "400":
+          description: "Solicitud inválida"
+  /v1/shipments/{shipment_id}/shipment-details:
+    get:
+      summary: "endpoints shipments a Cloud Run"
+      operationId: "SERVICE_GET_ENTITY_V1_SHIPMENTS_SHIPMENT_DETAILS"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - api_key: []
+      x-google-backend:
+        address: "https://shipments-487763415581.us-central1.run.app"
+        path_translation: "APPEND_PATH_TO_ADDRESS"
+      x-google-cors:
+        allowOrigins: ["*"]
+        allowMethods: ["GET"]
+        allowHeaders: ["Content-Type", "Authorization"]
+      responses:
+        "200":
+          description: "Respuesta exitosa"
+        "400":
+          description: "Solicitud inválida"
+  /v1/items:
+    get:
+      summary: "endpoints items a Cloud Run"
+      operationId: "SERVICE_GET_ALL_V1_ITEMS"
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - api_key: []
+      x-google-backend:
+        address: "https://items-487763415581.us-central1.run.app"
+        path_translation: "APPEND_PATH_TO_ADDRESS"
+      x-google-cors:
+        allowOrigins: ["*"]
+        allowMethods: ["GET"]
+        allowHeaders: ["Content-Type", "Authorization"]
+      responses:
+        "200":
+          description: "Respuesta exitosa"
+        "400":
+          description: "Solicitud inválida"
 securityDefinitions:
   api_key:
     in: query
