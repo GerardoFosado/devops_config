@@ -15,7 +15,7 @@ paths:
       produces:
         - application/json
       security:
-        - keycloak: []
+        - api_key: []
       x-google-backend:
         address: "https://service-template-python-487763415581.us-central1.run.app"
         path_translation: "APPEND_PATH_TO_ADDRESS"
@@ -94,7 +94,7 @@ paths:
           description: "Respuesta exitosa"
         "400":
           description: "Solicitud inválida"
-  /v1/shipments/{shipment_id}:
+  "/v1/shipments/{shipment_id}":
     get:
       summary: "endpoints shipments a Cloud Run"
       operationId: "SERVICE_GET_ENTITY_V1_SHIPMENTS"
@@ -116,7 +116,7 @@ paths:
           description: "Respuesta exitosa"
         "400":
           description: "Solicitud inválida"
-  /v1/shipments/{shipment_id}/shipment-details:
+  "/v1/shipments/{shipment_id}/shipment-details":
     get:
       summary: "endpoints shipments a Cloud Run"
       operationId: "SERVICE_GET_ENTITY_V1_SHIPMENTS_SHIPMENT_DETAILS"
